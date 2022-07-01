@@ -92,7 +92,21 @@ function App() {
     setSelectedBoard(currentBoard[0].boardId);
     setBoardTitle(currentBoard[0].title);
   };
+  const deleteCard = (cardId) => {
+    axios.delete(URL + '/cards/' + cardId)
+    .then(() => {
+      let pickedBoard;
+      for (let board of boardsData) {
+        if (board.boardId === selectedBoard) {
+          pickedBoard = board
+        }
+      }
 
+      const newCards = pickedBoard.cards.filter(card => card.cardId !== cardId)
+      setBoardsData(oldBoards => [...oldBoards, {...pickedBoard, cards: newCards}])
+    })
+    .catch((error) => {console.log(error)})
+  }
   return (
     <main className="App">
       <nav>
@@ -102,7 +116,7 @@ function App() {
       </nav>
       <BoardList boards={boardsData} onSelectBoard={getCurrentBoard} />
       <h2>Cards for Board: {boardTitle}</h2>
-      <CardList selectedBoard={selectedBoard} boardsData={boardsData} />
+      <CardList selectedBoard={selectedBoard} boardsData={boardsData} onDelete={deleteCard}/>
     </main>
   );
 }

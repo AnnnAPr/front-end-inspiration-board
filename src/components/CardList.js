@@ -3,18 +3,20 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 import './CardList.css';
 
-const CardList = ({boardsData, onDeleteCallback, onLikeCallback}) => {
-  const getCardList = (boardsData) => {
-    return boardsData.map((card) => {
+const CardList = ({boardsData, onDelete, onLikeCallback, selectedBoard}) => {
+  const chosenBoard = boardsData.filter(board => board.boardId === selectedBoard)
+  const getCardList = () => {
+    return chosenBoard.cards.map((card) => {
       return (
         <Card
-          key={card.id}
-          board_id={card.board_id}
-          card_id={card.card_id}
+          key={card.card_id}
+          boardId={card.board_id}
+          cardId={card.card_id}
           message={card.title}
-          count_like={card.count_like}
+          countLike={card.count_like}
+          selectedBoard={card.selectedBoard}
           onLikeCallback={onLikeCallback}
-          onDeleteCallback={onDeleteCallback}
+          onDelete={onDelete}
         />
       );
     });
@@ -22,7 +24,7 @@ const CardList = ({boardsData, onDeleteCallback, onLikeCallback}) => {
   return (
     <>
       <h2>Display cards for {Card.board_id}</h2>;
-      <ul> {getCardList(boardsData)}</ul>;
+      <ul> {getCardList}</ul>;
     </>
     
 
