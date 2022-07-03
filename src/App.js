@@ -92,6 +92,7 @@ function App() {
     setSelectedBoard(currentBoard[0].boardId);
     setBoardTitle(currentBoard[0].title);
   };
+  
   const deleteCard = (cardId) => {
     axios.delete(URL + '/cards/' + cardId)
     .then(() => {
