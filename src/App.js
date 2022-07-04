@@ -87,6 +87,18 @@ function App() {
       });
   };
 
+  const deleteBoard = (id) => {
+    axios
+      .delete(URL + `/boards/` + id)
+      .then(() => {
+        const newBoards = boardsData.filter((board) => board.id !== id);
+        setBoardsData(newBoards);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const getCurrentBoard = (id) => {
     const currentBoard = boardsData.filter((board) => board.boardId === id);
     setSelectedBoard(currentBoard[0].boardId);
@@ -100,7 +112,11 @@ function App() {
         <NewBoardForm onAddBoard={addBoard} />
         <NewCardForm onAddCard={addCard} />
       </nav>
-      <BoardList boards={boardsData} onSelectBoard={getCurrentBoard} />
+      <BoardList
+        boards={boardsData}
+        onSelectBoard={getCurrentBoard}
+        deleteBoardCallback={deleteBoard}
+      />
       <h2>Cards for Board: {boardTitle}</h2>
       <CardList selectedBoard={selectedBoard} boardsData={boardsData} />
     </main>

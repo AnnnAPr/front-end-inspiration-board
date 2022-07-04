@@ -2,11 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Board.css";
 
-const Board = ({ boardId, title, owner, cards, onSelectBoard }) => {
+const Board = ({
+  boardId,
+  title,
+  owner,
+  cards,
+  onSelectBoard,
+  deleteBoardCallback,
+}) => {
   const onBoardClick = () => {
     console.log(title);
     console.log(boardId);
     onSelectBoard(boardId);
+  };
+
+  const onDeleteBoard = () => {
+    deleteBoardCallback(boardId);
   };
 
   return (
@@ -16,6 +27,9 @@ const Board = ({ boardId, title, owner, cards, onSelectBoard }) => {
           <h1>{boardId}</h1>
           <h2>Title: {title}</h2>
           <h3>Owner: {owner} </h3>
+          <button className="remove-button" onClick={onDeleteBoard}>
+            Remove
+          </button>
         </button>
       </section>
     </>
