@@ -71,7 +71,7 @@ const NewBoardForm = ({onAddBoard}) => {
             </Form.Group>
             </fieldset>
             <Button onClick={handleClick} variant="success" type="submit" id="submit">
-              Submit
+              Add
             </Button>
       </Form>
       </DropdownButton>

@@ -18,9 +18,10 @@ const BoardList = ({ boards, onSelectBoard }) => {
   });
 
   return (
-    <>
+    <section className='boardsContainer'>
+      <h2 className='boardsTitle'>Boards</h2>
       <ul>{boardComponents}</ul>
-    </>
+    </section>
   );
 };
 

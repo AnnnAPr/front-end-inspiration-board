@@ -13,9 +13,9 @@ const Board = ({ boardId, title, owner, cards, onSelectBoard }) => {
     <>
       <section className="board-bubble">
         <button onClick={onBoardClick}>
-          <h1>{boardId}</h1>
-          <h2>Title: {title}</h2>
-          <h3>Owner: {owner} </h3>
+          <h1 className="boardId">{boardId}</h1>
+          <h2>{title}</h2>
+          <h3>By {owner} </h3>
         </button>
       </section>
     </>

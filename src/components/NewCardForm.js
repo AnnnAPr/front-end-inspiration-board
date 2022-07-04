@@ -42,7 +42,7 @@ const NewCardForm = ({onAddCard}) => {
 
             <Form.Text>   
             {/* className="text-muted" */}
-              Please enter a card message!
+              Please enter a message!
             </Form.Text>
           </Form.Group>
           <Button variant="success" type="submit" id="submit" onClick={handleClick}>

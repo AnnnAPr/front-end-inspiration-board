@@ -1,7 +1,38 @@
+
+
+h1.boardId{
+  display: none;
+}
+
+h2{
+  font-size: 1.5em;
+}
+
+h3{
+  font-size: 1em;
+}
+
+.boardsTitle{
+  color: white;
+  font-size: 2em;
+  margin: .5em;
+  margin-left: 3em;
+
+}
+
 .board-bubble button {
   border-radius: 20px;
   width: 30rem;
-  height: 10rem;
+  height: 5rem;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+
+.board-bubble button:hover{
+  background-color: #5698BD;
 }
 
 .no-highlight {
@@ -11,3 +42,4 @@
 .highlight {
   border-width: 10px;
 }
+
