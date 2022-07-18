@@ -41,7 +41,8 @@ Board.propTypes = {
   title: PropTypes.string.isRequired,
   owner: PropTypes.string.isRequired,
   cards: PropTypes.array,
-  onSelectBoard: PropTypes.func,
+  onSelectBoard: PropTypes.func.isRequired,
+  deleteBoardCallback: PropTypes.func.isRequired,
 };
 
 export default Board;

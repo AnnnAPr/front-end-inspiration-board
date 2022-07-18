@@ -89,7 +89,7 @@ function App() {
 
   const deleteBoard = (id) => {
     axios
-      .delete(URL + `/boards/` + id)
+      .delete(URL + "/boards/" + id)
       .then(() => {
         const newBoards = boardsData.filter((board) => board.id !== id);
         setBoardsData(newBoards);

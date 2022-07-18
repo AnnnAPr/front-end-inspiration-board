@@ -28,6 +28,7 @@ const BoardList = ({ boards, onSelectBoard, deleteBoardCallback }) => {
 BoardList.propTypes = {
   boards: PropTypes.arrayOf(PropTypes.object).isRequired,
   onSelectBoard: PropTypes.func.isRequired,
+  deleteBoardCallback: PropTypes.func.isRequired,
 };
 
 export default BoardList;
