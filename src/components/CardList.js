@@ -3,39 +3,37 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 import './CardList.css';
 
-const CardList = ({boardsData, onDeleteCallback, onLikeCallback}) => {
-  const getCardList = (boardsData) => {
-    return boardsData.map((card) => {
+const CardList = ({selectedCards, boardTitle, onLikeCallback, onDeleteCallback}) => {
+  const cardList = (selectedCards) => {
+    return selectedCards.map((card) => {
       return (
         <Card
-          key={card.id}
-          board_id={card.board_id}
-          card_id={card.card_id}
-          message={card.title}
-          count_like={card.count_like}
+          key={card.cardId}
+          boardId={card.boardId}
+          cardId={card.cardId}
+          message={card.message}
+          likesCount={card.likesCount}
           onLikeCallback={onLikeCallback}
           onDeleteCallback={onDeleteCallback}
         />
       );
     });
-  }
+  };
   return (
-    <>
-      <h2>Display cards for {Card.board_id}</h2>;
-      <ul> {getCardList(boardsData)}</ul>;
-    </>
-    
-
+    <section className="cards">
+      <h2 className="cardsTitle">Cards for {boardTitle}</h2>
+      {cardList(selectedCards)}
+    </section>
   )
 };
 
 CardList.propTypes = {
-  tasks: PropTypes.arrayOf(
+  cards: PropTypes.arrayOf(
     PropTypes.shape({
-      card_id: PropTypes.number.isRequired,
-      board_id: PropTypes.number.isRequired,
+      cardId: PropTypes.number.isRequired,
+      boardId: PropTypes.number.isRequired,
       message: PropTypes.string.isRequired,
-      count_like: PropTypes.number.isRequired,
+      likesCount: PropTypes.number.isRequired,
     })
   ).isRequired,
   onLikeCallback: PropTypes.func.isRequired,

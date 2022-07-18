@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = ({
-    card_id,
+    cardId,
     message,
-    likes_count,
-    board_id,
+    likesCount,
+    boardId,
     onLikeCallback,
     onDeleteCallback,
 }) => {
@@ -18,25 +18,25 @@ const Card = ({
             </p>
             <button
                 className="liked"
-                onClick={() => onLikeCallback(card_id)}
+                onClick={() => onLikeCallback(cardId)}
             >
-                {likes_count} like
+                {likesCount} ❤️
             </button>
             <button
-                className="delete card"
-                onClick={() => onDeleteCallback(card_id)}
+                className="delete"
+                onClick={() => onDeleteCallback(cardId)}
             >
-            delete card
+            delete
             </button>
         </div>
     );
 };
 
 Card.propTypes = {
-    card_id: PropTypes.number.isRequired,
-    board_id: PropTypes.number.isRequired,
+    cardId: PropTypes.number.isRequired,
+    boardId: PropTypes.number.isRequired,
     message: PropTypes.string.isRequired,
-    count_like: PropTypes.number.isRequired,
+    likesCount: PropTypes.number.isRequired,
     onLikeCallback: PropTypes.func.isRequired,
     onDeleteCallback: PropTypes.func.isRequired,
 };

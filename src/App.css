@@ -1,6 +1,7 @@
-html{
+main{
   background-color: black;
 }
+
 h1{
   font-size: 3em;;
 }
@@ -11,4 +12,10 @@ nav{
   background-color: #5698BD;
   padding: 2em;
   color: aliceblue;
+}
+
+.boards__cards{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
 }

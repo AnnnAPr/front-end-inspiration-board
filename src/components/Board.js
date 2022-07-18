@@ -24,12 +24,18 @@ const Board = ({
     <>
       <section className="board-bubble">
         <button onClick={onBoardClick}>
+<<<<<<< HEAD
           <h1>{boardId}</h1>
           <h2>Title: {title}</h2>
           <h3>Owner: {owner} </h3>
           <button className="remove-button" onClick={onDeleteBoard}>
             Remove
           </button>
+=======
+          <h1 className="boardId">{boardId}</h1>
+          <h2>{title}</h2>
+          <h3>By {owner} </h3>
+>>>>>>> main
         </button>
       </section>
     </>
