@@ -32,7 +32,7 @@ h3{
 }
 
 .board-bubble button:hover{
-  background-color: #5698BD;
+  border-width: 5px;
 }
 
 .no-highlight {
@@ -42,4 +42,13 @@ h3{
 .highlight {
   border-width: 10px;
 }
+
+.selected {
+  border: 7px solid rgb(160, 172, 85) !important;
+}
+
+.deselected {
+  background-color: #f8f9fa;
+}
+
 

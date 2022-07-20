@@ -16,3 +16,8 @@
 	width: 100%;
 	height: fit-content;
 }
+
+span {
+	font-weight: bolder;
+	text-decoration: underline;
+}

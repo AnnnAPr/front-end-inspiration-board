@@ -1,5 +1,4 @@
 .card__item{
-	background-color: bisque;
 	width: 9.5rem;
 	height: 10rem;
 	margin: 3px;
@@ -15,6 +14,10 @@
 .delete, .liked{
 	width: fit-content;
 	align-self: center;
-	background-color: bisque;
 	border:none;
+}
+
+.message {
+	font-weight: bolder;
+	font-style: italic;
 }

@@ -1,9 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Card from './Card';
-import './CardList.css';
+import React from "react";
+import PropTypes from "prop-types";
+import Card from "./Card";
+import "./CardList.css";
 
-const CardList = ({selectedCards, boardTitle, onLikeCallback, onDeleteCallback}) => {
+const CardList = ({
+  selectedCards,
+  boardTitle,
+  deleteCard,
+  addLike,
+  boardColor,
+}) => {
   const cardList = (selectedCards) => {
     return selectedCards.map((card) => {
       return (
@@ -13,22 +19,25 @@ const CardList = ({selectedCards, boardTitle, onLikeCallback, onDeleteCallback})
           cardId={card.cardId}
           message={card.message}
           likesCount={card.likesCount}
-          onLikeCallback={onLikeCallback}
-          onDelete={onDelete}
+          deleteCard={deleteCard}
+          addLike={addLike}
+          color={boardColor}
         />
       );
     });
   };
   return (
     <section className="cards">
-      <h2 className="cardsTitle">Cards for {boardTitle}</h2>
+      <h2 className="cardsTitle">
+        Cards for <span style={{ color: boardColor }}>{boardTitle}</span>
+      </h2>
       {cardList(selectedCards)}
     </section>
-  )
+  );
 };
 
 CardList.propTypes = {
-  cards: PropTypes.arrayOf(
+  selectedCards: PropTypes.arrayOf(
     PropTypes.shape({
       cardId: PropTypes.number.isRequired,
       boardId: PropTypes.number.isRequired,
@@ -36,8 +45,10 @@ CardList.propTypes = {
       likesCount: PropTypes.number.isRequired,
     })
   ).isRequired,
-  onLikeCallback: PropTypes.func.isRequired,
-  onDeleteCallback: PropTypes.func.isRequired,
-}; 
+  boardTitle: PropTypes.string,
+  addLike: PropTypes.func.isRequired,
+  deleteCard: PropTypes.func.isRequired,
+  boardColor: PropTypes.string,
+};
 
 export default CardList;

@@ -7,12 +7,14 @@ import './NewBoardForm.css'
 const NewBoardForm = ({onAddBoard}) => {
   const [newBoardData, setNewBoardData] = useState({
     title: '',
-    owner: ''
+    owner: '',
+    color: '#fbf3bc'
   });
 
   const [isInvalidInput, setIsInvalidInput] = useState(
     {title: false,
-    owner: false
+    owner: false,
+    color: false
     })
 
   const handleChange = (event) => {
@@ -23,8 +25,9 @@ const NewBoardForm = ({onAddBoard}) => {
   const handleClick = (event) => {
     setIsInvalidInput(
     {title: newBoardData.title !=='' ? false : true,
-    owner: newBoardData.owner !=='' ? false : true})
-  }
+    owner: newBoardData.owner !=='' ? false : true,
+    color: newBoardData.color !=='' ? false : true})
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,7 +35,8 @@ const NewBoardForm = ({onAddBoard}) => {
       onAddBoard(newBoardData);
       setNewBoardData({
         title: '',
-        owner: ''
+        owner: '',
+        color: '#fbf3bc'
       });
     }else{
       console.log("Input Valid Data!")
@@ -65,8 +69,10 @@ const NewBoardForm = ({onAddBoard}) => {
               <Form.Control
                 type="color"
                 id="exampleColorInput"
-                defaultValue="#563d7c"
+                defaultValue="#fbf3bc"
                 title="Choose your color"
+                onChange={handleChange}
+                name="color"
               />
             </Form.Group>
             </fieldset>

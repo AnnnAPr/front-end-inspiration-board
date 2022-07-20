@@ -1,6 +1,8 @@
-main{
+html{
   background-color: black;
 }
+
+main{background-color: black;}
 
 h1{
   font-size: 3em;;
@@ -9,9 +11,9 @@ nav{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #5698BD;
+  background-image: url("../public/pink_sky.jpg");
   padding: 2em;
-  color: aliceblue;
+  color: whitesmoke;
 }
 
 .boards__cards{
@@ -19,3 +21,9 @@ nav{
   flex-direction: row;
   justify-content:flex-start;
 }
+
+nav button{
+  background-color: whitesmoke !important;
+  color: black !important;
+}
+

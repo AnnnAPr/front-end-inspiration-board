@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {DropdownButton, Form, Button, Row, Col} from 'react-bootstrap';
+import {DropdownButton, Form, Button} from 'react-bootstrap';
 import './NewCardForm.css'
 import PropTypes from 'prop-types';
 
@@ -36,12 +36,12 @@ const NewCardForm = ({onAddCard}) => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Message</Form.Label>
             <Form.Control placeholder="Enter message"
-                          className={newCardData.message.length === 0 || newCardData.message.length > 5 ? "input input_more_40" : "input text-muted"}
+                          as="textarea"
+                          className={newCardData.message.length === 0 || newCardData.message.length > 40 ? "input_more_40" : ""}
                           onChange={handleChange}
                           value={newCardData.message}/>
 
-            <Form.Text>   
-            {/* className="text-muted" */}
+            <Form.Text className={isInvalidInput.message ? "show text-muted": "hide"}>   
               Please enter a message!
             </Form.Text>
           </Form.Group>
