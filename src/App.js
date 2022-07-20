@@ -59,6 +59,7 @@ function App() {
       });
   }, [selectedBoardId, boardsData]);
 
+
   // GET selected Board ID
   const getBoardDataAndIndex = (selectedBoardId) => {
     let selectedBoardIdData;
@@ -195,7 +196,7 @@ function App() {
     setSelectedCards(sorted);
   };
 
-  const sortAphabetically = (arr) => {
+  const sortAlphabetically = (arr) => {
     const sorted = [...arr].sort((a, b) => {
       let lowerA = a.message.toLowerCase(),
         lowerB = b.message.toLowerCase();
@@ -214,7 +215,7 @@ function App() {
 
   const sortByLikes = (arr) => {
     const sorted = [...arr].sort((a, b) => {
-      return a.likesCount - b.likesCount;
+      return b.likesCount - a.likesCount;
     });
     setSelectedCards(sorted);
   };
@@ -238,7 +239,7 @@ function App() {
         </Button>
         <Button
           variant="secondary"
-          onClick={() => sortAphabetically(selectedCards)}
+          onClick={() => sortAlphabetically(selectedCards)}
         >
           Alphabetically
         </Button>
@@ -267,7 +268,7 @@ function App() {
           deleteCard={deleteCard}
           addLike={addLike}
           sortById={sortById}
-          sortAphabetically={sortAphabetically}
+          sortAlphabetically={sortAlphabetically}
           sortByLikes={sortByLikes}
         />
 >>>>>>> main

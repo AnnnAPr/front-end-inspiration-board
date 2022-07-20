@@ -31,7 +31,7 @@ const BoardList = ({ boards, onSelectBoard, selectedBoardId }) => {
 BoardList.propTypes = {
   boards: PropTypes.arrayOf(PropTypes.object).isRequired,
   onSelectBoard: PropTypes.func.isRequired,
-  selectedBoardId: PropTypes.func,
+  selectedBoardId: PropTypes.number,
 };
 
 export default BoardList;
