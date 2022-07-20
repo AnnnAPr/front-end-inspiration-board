@@ -14,7 +14,7 @@ function App() {
   const [boardColor, setBoardColor] = useState();
   const [selectedCards, setSelectedCards] = useState([]);
 
-  const URL = "https://inspo-board-server.herokuapp.com";
+  const URL = process.env.REACT_APP_BACKEND_URL;
 
   // GET all boards and set boards data
   useEffect(() => {
