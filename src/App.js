@@ -130,30 +130,7 @@ function App() {
     setBoardTitle(currentBoard[0].title);
     setBoardColor(currentBoard[0].color);
   };
-  
-  const deleteCard = (cardId) => {
-    axios.delete(URL + '/cards/' + cardId)
-    .then(() => {
-      let pickedBoard;
-      for (let board of boardsData) {
-        if (board.boardId === selectedBoard) {
-          pickedBoard = board
-        }
-      }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-      const newCards = pickedBoard.cards.filter(card => card.cardId !== cardId)
-      setBoardsData(oldBoards => [...oldBoards, {...pickedBoard, cards: newCards}])
-    })
-    .catch((error) => {console.log(error)})
-  }
-=======
-  const getCardIndex = (cardId) => {
-    for (const [index, card] of selectedCards.entries()) {
-      if (card.cardId === cardId) {
-        return index;
-=======
   // DELETE Card
   const deleteCard = (cardId) => {
     console.log("cardId >", cardId);
@@ -203,7 +180,6 @@ function App() {
 
       if (lowerA < lowerB) {
         return -1;
->>>>>>> main
       }
       if (lowerA > lowerB) {
         return 1;
@@ -220,11 +196,7 @@ function App() {
     setSelectedCards(sorted);
   };
 
-<<<<<<< HEAD
->>>>>>> main
-=======
   // Pass down Props
->>>>>>> main
   return (
     <main className="App">
       <nav>
@@ -248,14 +220,6 @@ function App() {
         </Button>
       </nav>
       <section className="boards__cards">
-<<<<<<< HEAD
-      <BoardList boards={boardsData} onSelectBoard={getCurrentBoard} />
-<<<<<<< HEAD
-      <h2>Cards for Board: {boardTitle}</h2>
-      <CardList selectedBoard={selectedBoard} boardsData={boardsData} onDelete={deleteCard}/>
-=======
-      <CardList selectedCards={selectedCards} boardTitle={boardTitle} />
-=======
         <BoardList
           boards={boardsData}
           onSelectBoard={getCurrentBoard}
@@ -271,9 +235,7 @@ function App() {
           sortAlphabetically={sortAlphabetically}
           sortByLikes={sortByLikes}
         />
->>>>>>> main
       </section>
->>>>>>> main
     </main>
   );
 }
