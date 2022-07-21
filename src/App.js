@@ -4,7 +4,7 @@ import BoardList from "./components/BoardList";
 import CardList from "./components/CardList";
 import NewBoardForm from "./components/NewBoardForm";
 import NewCardForm from "./components/NewCardForm";
-import "./App.css";
+import "./App.css"; 
 import Button from "react-bootstrap/Button";
 
 function App() {

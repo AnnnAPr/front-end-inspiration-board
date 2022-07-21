@@ -11,12 +11,16 @@
 	padding: .2em;
 }
 
-.delete, .liked{
+.liked{
 	width: fit-content;
 	align-self: center;
 	border:none;
 }
-
+.delete{
+	width: fit-content;
+	align-self: center;
+	border-radius:10px;
+}
 .message {
 	font-weight: bolder;
 	font-style: italic;

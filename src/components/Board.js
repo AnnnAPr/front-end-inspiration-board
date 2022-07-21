@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./Board.css";
 
 const Board = ({
-  boardId,
+  boardId, 
   title,
   owner,
   onSelectBoard,
@@ -26,9 +26,8 @@ const Board = ({
             backgroundColor: color, //how does this background color work? I mean how can it know where to get the color info?
             height: selectedBoardId === boardId ? "10rem" : "5rem",
           }}
-        >
-          <h1 className="boardId">{boardId}</h1>
-          <h2>{title}</h2>
+        > 
+          <h1 className="boardId">{boardId}</h1>  
           <h3>By {owner} </h3>
         </button>
       </section>
@@ -43,7 +42,6 @@ Board.propTypes = {
   cards: PropTypes.array,
   color: PropTypes.string.isRequired,
   onSelectBoard: PropTypes.func,
-  isSelected: PropTypes.bool,
-};
-
+  isSelected: PropTypes.bool, 
+}
 export default Board;
