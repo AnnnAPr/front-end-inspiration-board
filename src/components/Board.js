@@ -11,7 +11,7 @@ const Board = ({
   selectedBoardId,
 }) => {
   const onBoardClick = () => {
-    console.log(title);
+    console.log(title); //where are these 3 console log inside our UI display?
     console.log(boardId);
     console.log(color);
     onSelectBoard(boardId);
@@ -23,7 +23,7 @@ const Board = ({
         <button
           onClick={onBoardClick}
           style={{
-            backgroundColor: color,
+            backgroundColor: color, //how does this background color work? I mean how can it know where to get the color info?
             height: selectedBoardId === boardId ? "10rem" : "5rem",
           }}
         >

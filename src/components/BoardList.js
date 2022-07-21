@@ -5,16 +5,16 @@ import Board from "./Board";
 const BoardList = ({ boards, onSelectBoard, selectedBoardId }) => {
   const boardComponents = boards.map((board) => {
     return (
-      <ul key={board.boardId}>
+      <ul key={board.boardId}>  {/*we don't ned this ul line right?*/}
         <Board
           boardId={board.boardId}
           title={board.title}
           owner={board.owner}
-          cards={board.cards}
+          cards={board.cards} //cards is not a board props, why can we use it here?
           color={board.color}
-          onSelectBoard={onSelectBoard}
+          onSelectBoard={onSelectBoard} //why in board.js, this function need a boardID para but here no?
           selectedBoardId={selectedBoardId}
-          boards={boards}
+          boards={boards} //how can we put boards when we map single board?
         />
       </ul>
     );
