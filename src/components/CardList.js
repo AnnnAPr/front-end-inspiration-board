@@ -38,7 +38,7 @@ const CardList = ({
 
 CardList.propTypes = {
   selectedCards: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.shape({ //what does this shape mean?
       cardId: PropTypes.number.isRequired,
       boardId: PropTypes.number.isRequired,
       message: PropTypes.string.isRequired,

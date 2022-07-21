@@ -10,7 +10,7 @@ const Card = ({ cardId, message, likesCount, deleteCard, addLike, color }) => {
       <button
         className="liked"
         style={{ backgroundColor: color }}
-        onClick={() => addLike(cardId)}
+        onClick={ ()=> addLike(cardId)}
       >
         {likesCount} ❤️
       </button>
